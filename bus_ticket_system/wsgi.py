@@ -12,6 +12,6 @@ import os
 from django.core.wsgi import get_wsgi_application
 
 setting_module = 'bus_ticket_system.deployment' if 'RENDER_EXTERNAL_HOSTNAME' in os.environ else 'bus_ticket_system.settings'
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', setting_module)
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', setting_module)
 
 application = get_wsgi_application()

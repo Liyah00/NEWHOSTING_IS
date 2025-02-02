@@ -7,8 +7,7 @@ import sys
 def main():
     """Run administrative tasks."""
     setting_module = "bus_ticket_system.deployment" if "RENDER_EXTERNAL_HOSTNAME" in os.environ else "bus_ticket_system.settings"
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', setting_module)
-
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', setting_module)
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

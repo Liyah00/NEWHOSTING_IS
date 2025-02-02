@@ -3,10 +3,13 @@ import os
 from . settings import BASE_DIR
 import dj_database_url
 
-DEBUG= False
-ALLOWED_HOSTS= [os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
-CSRF_TRUSTED_ORIGINS =['https://'+os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
+DEBUG = False
+ALLOWED_HOSTS = [os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
+
+CSRF_TRUSTED_ORIGINS = ['https://'+os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
+
 SECRET_KEY = os.environ.get('SECRET_KEY')
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
@@ -37,7 +40,7 @@ STORAGES = {
 
 DATABASES ={
     'default':dj_database_url.config(
-        default=os.environ['DATABASE_URL'],
+        default = os.environ['DATABASE_URL'],
         conn_max_age=600
     )
 }

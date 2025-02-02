@@ -11,7 +11,7 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-setting_module= 'bus_ticket_system.deployment' if 'RENDER_EXTERNAL_HOSTNAME' in os.environ else 'bus_ticket_system.settings'
+setting_module = 'bus_ticket_system.deployment' if 'RENDER_EXTERNAL_HOSTNAME' in os.environ else 'bus_ticket_system.settings'
 os.environ.setdefault('DJANGO_SETTINGS_MODULE',  setting_module)
 
 application = get_asgi_application()
